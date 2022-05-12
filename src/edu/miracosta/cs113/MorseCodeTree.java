@@ -97,23 +97,26 @@ public class MorseCodeTree extends BinaryTree<Character> {
             char letter = l.charAt(0) ;
             String morseCode = l.substring(2) ;
 
-            for (int i = 0 ; i < morseCode.length() ; i++) {
+            for(int i = 0 ; i < morseCode.length() ; i++) {
 
                 //left
-                if (morseCode.charAt(i) == '*') {
-                    if (currentNode.left == null) {
-                        currentNode.left = new Node<>(letter) ;
+                if(morseCode.charAt(i) == '*') {
+
+                    if(currentNode.left == null) {
+                        currentNode.left = new Node<>(letter);
                     } else {
                         currentNode = currentNode.left ;
                     }
 
                 //right
-                } else if (morseCode.charAt (i) == '-') {
-                    if (currentNode.right == null) {
+                } else if(morseCode.charAt(i) == '-') {
+
+                    if(currentNode.right == null) {
                         currentNode.right = new Node<>(letter);
                     } else {
                         currentNode = currentNode.right;
                     }
+
                 }
             }
         }
